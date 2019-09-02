@@ -6,7 +6,7 @@ export const loginUser = ({ user }) => {
 	};
 };
 
-export const getCurrentUser = (userCredentials) => {
+export const getCurrentUser = (userInfo) => {
 	const headers = {
 		method: 'POST',
 		credentials: 'include',
@@ -21,7 +21,7 @@ export const getCurrentUser = (userCredentials) => {
 		return fetch('http://localhost:3000/login', headers)
 			.then((res) => res.json())
 			.then((data) => {
-				dispatch(setCurrentUser(data));
+				dispatch(loginUser(data));
 			})
 			.catch(console.log);
 	};
