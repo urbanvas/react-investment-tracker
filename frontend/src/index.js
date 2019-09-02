@@ -7,6 +7,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import rootreducer from './reducers/rootreducer';
+import Login from './components/login/login';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const enhancer = composeEnhancers(applyMiddleware(thunk));
@@ -14,7 +15,7 @@ const enhancer = composeEnhancers(applyMiddleware(thunk));
 const store = createStore(rootreducer, enhancer);
 ReactDOM.render(
 	<Provider store={store}>
-		<App />
+		<Login />
 	</Provider>,
 	document.getElementById('root')
 );

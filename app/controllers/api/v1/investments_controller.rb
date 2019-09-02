@@ -1,4 +1,5 @@
 class Api::V1::InvestmentsController < ApplicationController
+    before_action :get_current_user
 
     def index
         if logged_in?

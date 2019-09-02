@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-    before_action :set_user, only: [:show]
+    before_action :get_current_user
     
     def show
 

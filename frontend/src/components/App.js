@@ -84,13 +84,7 @@ class App extends React.Component {
 		console.log(currentUser);
 		return (
 			<div>
-				<p>{this.props.currentUser ? this.props.currentUser.user.username : 'not here yet'}</p>
-				<p>{this.state.hoe ? this.state.hoe.email : 'data not here'}</p>
-
-				<Login
-					handleLoginFormChange={this.handleLoginFormChange}
-					handleLoginFormSubmit={this.handleLoginFormSubmit}
-				/>
+				<Login />
 				<button onClick={this.logout}>Logout</button>
 			</div>
 		);

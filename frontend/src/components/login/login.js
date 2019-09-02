@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './login.css';
+import Input from '../input/Input';
+import Form from '../form/Form';
 
-const login = ({ handleLoginFormChange, handleLoginFormSubmit, email, password }) => {
+const Login = () => {
+	const [ email, setEmail ] = useState('');
+	const [ password, setPassword ] = useState('');
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		const userInfo = { email, password };
+		fetch('http://localhost:3000/login', headers)
+			.then((res) => res.json())
+			.then((userJSON) => {
+				console.log(userJSON);
+			})
+			.catch(console.log);
+	};
 	return (
-		<form className="login" onSubmit={handleLoginFormSubmit}>
-			<label htmlFor="email">Email:</label>
-			<input type="text" placeholder="Enter email" name="email" onChange={handleLoginFormChange} required />
-			<label htmlFor="password">Password:</label>
-			<input type="text" placeholder="Enter Password" name="password" onChange={handleLoginFormChange} required />
-			<button type="submit">Create User</button>
-		</form>
+		<Form classes="login" buttonText="Login" handleSubmit={handleSubmit}>
+			<Input attr="email" handleChange={setEmail} value={email} />
+			<Input attr="password" handleChange={setPassword} value={password} />
+		</Form>
 	);
 };
 
-export default login;
+export default Login;

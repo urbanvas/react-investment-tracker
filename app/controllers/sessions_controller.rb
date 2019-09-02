@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
         if @user && @user.authenticate(params[:user][:password])
             # find out why when you put a binding pry it hits this method twice in one response
             session[:user_id] = @user.id
-            render json: { user: @user.user_serializer }
+            render json: {user: @user.user_serializer }
         else 
             render json: {
                 error: 'Invalid Credentials'
