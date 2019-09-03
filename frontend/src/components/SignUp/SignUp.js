@@ -1,27 +1,28 @@
 import React, { useState } from 'react';
-import './login.css';
+import './signup.css';
 import Input from '../Input/Input';
 import Form from '../Form/Form';
 import { connect, useSelector } from 'react-redux';
-import { getCurrentUser } from '../../actions/loginUser';
+import { createUser } from '../../actions/signupUser';
 
-const Login = ({ getCurrentUser }) => {
+const SignUp = ({ createUser }) => {
+	const [ username, setUsername ] = useState('');
 	const [ email, setEmail ] = useState('');
 	const [ password, setPassword ] = useState('');
-	const user = useSelector((state) => state.userReducer.user);
+	const user = useSelector((state) => state);
+	console.log(user);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		getCurrentUser({ email, password });
+		createUser({ username, email, password });
 	};
-
 	return (
-		<Form classes="login" buttonText="Login" handleSubmit={handleSubmit}>
+		<Form classes="signup" buttonText="Sign Up" handleSubmit={handleSubmit}>
+			<Input attr="username" handleChange={setUsername} value={username} />
 			<Input attr="email" handleChange={setEmail} value={email} />
 			<Input attr="password" handleChange={setPassword} value={password} />
-			<p>{user ? user.id : 'fail'}</p>
 		</Form>
 	);
 };
 
-export default connect(null, { getCurrentUser })(Login);
+export default connect(null, { createUser })(SignUp);

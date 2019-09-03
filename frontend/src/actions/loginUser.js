@@ -1,10 +1,8 @@
 import { LOGIN_USER } from '../constants/userConstants';
-export const loginUser = ({ user }) => {
-	return {
-		type: LOGIN_USER,
-		user
-	};
-};
+const loginUser = ({ user }) => ({
+	type: LOGIN_USER,
+	user
+});
 
 export const getCurrentUser = (userInfo) => {
 	const headers = {
@@ -21,6 +19,7 @@ export const getCurrentUser = (userInfo) => {
 		return fetch('http://localhost:3000/login', headers)
 			.then((res) => res.json())
 			.then((data) => {
+				console.log(data);
 				dispatch(loginUser(data));
 			})
 			.catch(console.log);
