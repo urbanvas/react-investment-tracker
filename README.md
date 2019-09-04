@@ -23,4 +23,6 @@ Things you may want to cover:
 
 * ...
 
-ADD before_action to render error json instead of good code
+MAKE SURE APP WORKS WITH NO SEED DATA
+APP WITH REDUX
+make new inestment and connect it to user

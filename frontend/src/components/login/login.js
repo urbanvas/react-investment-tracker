@@ -2,26 +2,26 @@ import React, { useState } from 'react';
 import './login.css';
 import Input from '../Input/Input';
 import Form from '../Form/Form';
-import { connect, useSelector } from 'react-redux';
-import { getCurrentUser } from '../../actions/loginUser';
+import { connect } from 'react-redux';
+import { loginUser } from '../../actions/user/loginUser';
+import { withRouter } from 'react-router-dom';
 
-const Login = ({ getCurrentUser }) => {
+const Login = ({ loginUser, history }) => {
 	const [ email, setEmail ] = useState('');
 	const [ password, setPassword ] = useState('');
-	const user = useSelector((state) => state.userReducer.user);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		getCurrentUser({ email, password });
+		loginUser({ email, password });
+		history.push('/app');
 	};
 
 	return (
 		<Form classes="login" buttonText="Login" handleSubmit={handleSubmit}>
 			<Input attr="email" handleChange={setEmail} value={email} />
 			<Input attr="password" handleChange={setPassword} value={password} />
-			<p>{user ? user.id : 'fail'}</p>
 		</Form>
 	);
 };
 
-export default connect(null, { getCurrentUser })(Login);
+export default connect(null, { loginUser })(withRouter(Login));

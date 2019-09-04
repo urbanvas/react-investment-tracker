@@ -1,10 +1,10 @@
-import { LOGIN_USER } from '../constants/userConstants';
-const loginUser = ({ user }) => ({
+import { LOGIN_USER } from '../../constants/userConstants';
+const loginUserAction = (user) => ({
 	type: LOGIN_USER,
 	user
 });
 
-export const getCurrentUser = (userInfo) => {
+export const loginUser = (userInfo) => {
 	const headers = {
 		method: 'POST',
 		credentials: 'include',
@@ -19,8 +19,9 @@ export const getCurrentUser = (userInfo) => {
 		return fetch('http://localhost:3000/login', headers)
 			.then((res) => res.json())
 			.then((data) => {
-				console.log(data);
-				dispatch(loginUser(data));
+				if (!data.status) {
+					dispatch(loginUserAction(data));
+				}
 			})
 			.catch(console.log);
 	};

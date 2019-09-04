@@ -1,54 +1,40 @@
 import React, { Fragment, Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 import './App.css';
 import Login from './Login/Login';
 import SignUp from './SignUp/SignUp';
 import Navbar from './Navbar/Navbar';
+import Investment from './Investment/Investment';
+import { currentUser } from '../actions/user/currentUser';
+import Logout from './Logout/Logout';
 
 class App extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			currentUser: null
-		};
+		this.state = {};
 	}
-	// // async fetch w/ react?
-	logout = (e) => {
-		fetch('http://localhost:3000/logout', {
-			credentials: 'include',
-			method: 'DELETE'
-		})
-			.then((res) => res.json())
-			.then(console.log)
-			.catch(console.log);
-	};
 
+	// // async fetch w/ react?
 	componentDidMount() {
-		fetch('http://localhost:3000/currentuser', {
-			credentials: 'include'
-		})
-			.then((res) => res.json())
-			.then((data) => {
-				if (!data.status) {
-					this.setState(() => ({ currentUser: data }));
-				}
-			})
-			.catch(console.log);
+		this.props.currentUser();
 	}
 
 	render() {
-		console.log(this.state);
+		console.log(this.props.user);
 		return (
 			<Router>
 				<Fragment>
 					<Navbar />
+					{!!this.props.user.id ? <Redirect to="/app" /> : <Redirect to="/" />}
 					<Route exact path="/signup" component={SignUp} />
 					<Route exact path="/login" component={Login} />
-					<button onClick={this.logout}>Logout</button>
+					<Logout />
 				</Fragment>
 			</Router>
 		);
 	}
 }
+const mapStateToProps = (state) => state;
 
-export default App;
+export default connect(mapStateToProps, { currentUser })(App);

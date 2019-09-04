@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 import './signup.css';
 import Input from '../Input/Input';
 import Form from '../Form/Form';
-import { connect, useSelector } from 'react-redux';
-import { createUser } from '../../actions/signupUser';
+import { connect } from 'react-redux';
+import { createUser } from '../../actions/user/signupUser';
+import { withRouter } from 'react-router-dom';
 
-const SignUp = ({ createUser }) => {
+const SignUp = ({ createUser, history }) => {
 	const [ username, setUsername ] = useState('');
 	const [ email, setEmail ] = useState('');
 	const [ password, setPassword ] = useState('');
-	const user = useSelector((state) => state);
-	console.log(user);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		createUser({ username, email, password });
+		history.push('/app');
 	};
 	return (
 		<Form classes="signup" buttonText="Sign Up" handleSubmit={handleSubmit}>
@@ -25,4 +25,4 @@ const SignUp = ({ createUser }) => {
 	);
 };
 
-export default connect(null, { createUser })(SignUp);
+export default connect(null, { createUser })(withRouter(SignUp));

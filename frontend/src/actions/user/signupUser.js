@@ -1,4 +1,4 @@
-import { SIGN_UP_USER } from '../constants/userConstants';
+import { SIGN_UP_USER } from '../../constants/userConstants';
 const signUpUser = (user) => ({
 	type: SIGN_UP_USER,
 	user
@@ -19,7 +19,6 @@ export const createUser = (userInfo) => {
 		return fetch('http://localhost:3000/api/v1/users', headers)
 			.then((res) => res.json())
 			.then((data) => {
-				console.log(data, 'hitting correct dispatch');
 				dispatch(signUpUser(data));
 			})
 			.catch(console.log);
