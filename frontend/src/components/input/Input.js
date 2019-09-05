@@ -4,9 +4,11 @@ const Input = ({ attr, value, handleChange }) => {
 	const capitalizedAttr = (str) => str[0].toUpperCase() + str.slice(1);
 	return (
 		<Fragment>
-			<label htmlFor={attr}>{capitalizedAttr(attr)}:</label>
+			<label className="label" htmlFor={attr}>
+				{capitalizedAttr(attr)}:
+			</label>
 			<input
-				className="input is-primary"
+				className="input is-danger is-large"
 				type="text"
 				placeholder={`Enter ${attr}`}
 				name={attr}
