@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './login.css';
 import Input from '../Input/Input';
 import Form from '../Form/Form';
 import { connect } from 'react-redux';

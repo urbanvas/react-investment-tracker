@@ -6,6 +6,7 @@ const Input = ({ attr, value, handleChange }) => {
 		<Fragment>
 			<label htmlFor={attr}>{capitalizedAttr(attr)}:</label>
 			<input
+				className="input is-primary"
 				type="text"
 				placeholder={`Enter ${attr}`}
 				name={attr}
