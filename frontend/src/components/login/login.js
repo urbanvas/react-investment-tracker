@@ -12,13 +12,25 @@ const Login = ({ loginUser, history }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		loginUser({ email, password });
-		history.push('/app');
+		history.push('/home');
 	};
 
 	return (
 		<Form classes="login" buttonText="Login" handleSubmit={handleSubmit}>
-			<Input attr="email" handleChange={setEmail} value={email} />
-			<Input attr="password" handleChange={setPassword} value={password} />
+			<Input
+				attr="email"
+				handleChange={setEmail}
+				value={email}
+				inputClassArr={[ 'input', 'is-danger', 'is-large' ]}
+				labelClassArr={[ 'label' ]}
+			/>
+			<Input
+				attr="password"
+				handleChange={setPassword}
+				value={password}
+				inputClassArr={[ 'input', 'is-danger', 'is-large' ]}
+				labelClassArr={[ 'label' ]}
+			/>
 		</Form>
 	);
 };

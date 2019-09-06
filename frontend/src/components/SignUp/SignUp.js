@@ -13,13 +13,31 @@ const SignUp = ({ createUser, history }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		createUser({ username, email, password });
-		history.push('/app');
+		history.push('/home');
 	};
 	return (
 		<Form classes="signup" buttonText="Sign Up" handleSubmit={handleSubmit}>
-			<Input attr="username" handleChange={setUsername} value={username} />
-			<Input attr="email" handleChange={setEmail} value={email} />
-			<Input attr="password" handleChange={setPassword} value={password} />
+			<Input
+				attr="username"
+				handleChange={setUsername}
+				value={username}
+				inputClassArr={[ 'input', 'is-danger', 'is-large' ]}
+				labelClassArr={[ 'label' ]}
+			/>
+			<Input
+				attr="email"
+				handleChange={setEmail}
+				value={email}
+				inputClassArr={[ 'input', 'is-danger', 'is-large' ]}
+				labelClassArr={[ 'label' ]}
+			/>
+			<Input
+				attr="password"
+				handleChange={setPassword}
+				value={password}
+				inputClassArr={[ 'input', 'is-danger', 'is-large' ]}
+				labelClassArr={[ 'label' ]}
+			/>
 		</Form>
 	);
 };

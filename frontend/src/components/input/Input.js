@@ -1,14 +1,14 @@
 import React, { Fragment } from 'react';
 
-const Input = ({ attr, value, handleChange }) => {
+const Input = ({ attr, value, handleChange, inputClassArr, labelClassArr }) => {
 	const capitalizedAttr = (str) => str[0].toUpperCase() + str.slice(1);
 	return (
 		<Fragment>
-			<label className="label" htmlFor={attr}>
+			<label className={labelClassArr.join(' ')} htmlFor={attr}>
 				{capitalizedAttr(attr)}:
 			</label>
 			<input
-				className="input is-danger is-large"
+				className={inputClassArr.join(' ')}
 				type="text"
 				placeholder={`Enter ${attr}`}
 				name={attr}

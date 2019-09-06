@@ -5,9 +5,9 @@ import './App.scss';
 import Login from './Login/Login';
 import SignUp from './SignUp/SignUp';
 import Navbar from './Navbar/Navbar';
-import Investment from './Investment/Investment';
 import { currentUser } from '../actions/user/currentUser';
 import Logout from './Logout/Logout';
+import Home from './Home/Home';
 
 class App extends Component {
 	constructor(props) {
@@ -21,15 +21,16 @@ class App extends Component {
 	}
 
 	render() {
-		console.log(this.props.user);
+		console.log(this.props);
 		return (
 			<Router>
 				<Fragment>
+					{!!this.props.user.id ? <Redirect to="/home" /> : <Redirect to="/" />}
+					<Logout />
 					<Navbar />
-					{!!this.props.user.id ? <Redirect to="/app" /> : <Redirect to="/" />}
 					<Route exact path="/signup" component={SignUp} />
 					<Route exact path="/login" component={Login} />
-					<Logout />
+					<Route exact path="/home" component={Home} />
 				</Fragment>
 			</Router>
 		);

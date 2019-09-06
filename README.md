@@ -26,3 +26,4 @@ Things you may want to cover:
 MAKE SURE APP WORKS WITH NO SEED DATA
 APP WITH REDUX
 make new inestment and connect it to user
+FIGURE OUT A WAY FOR INCORRECT SIGN UP OR LOGIN TO STOP addhistory if failed
