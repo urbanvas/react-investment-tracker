@@ -11,7 +11,7 @@ const initialState = [];
 export default function investmentReducer(state = initialState, action) {
 	switch (action.type) {
 		case INDEX_INVESTMENTS:
-			return [ ...action.indexInvestments ];
+			return action.indexInvestments;
 		case SHOW_INVESTMENT:
 			return '';
 		case CREATE_INVESTMENT:
@@ -19,7 +19,8 @@ export default function investmentReducer(state = initialState, action) {
 		case UPDATE_INVESTMENT:
 			return '';
 		case DELETE_INVESTMENT:
-			return '';
+			const newState = state.filter((investment) => investment.id !== action.id);
+			return newState;
 		default:
 			return state;
 	}

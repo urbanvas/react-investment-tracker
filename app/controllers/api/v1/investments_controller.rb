@@ -12,9 +12,15 @@ class Api::V1::InvestmentsController < ApplicationController
 			expense_rate: params[:investment][:expense_rate], 
 			initial_deposit: params[:investment][:initial_deposit]
 		)
-      @investment.user_id = @user.id
-      @investment.save
-      render json: @investment
+    	@investment.user_id = @user.id
+    	@investment.save
+    	render json: @investment
+    end
+
+    def destroy
+		@investment = Investment.find(params[:id])
+    	@investment.destroy
+		render json: {success: "investment deleted"}
     end
 
     private
@@ -23,6 +29,6 @@ class Api::V1::InvestmentsController < ApplicationController
     end
 
     def investment_params
-      params.require(:investment).permit( :name, :growth_rate, :expense_rate, :initial_deposit, :user_id)
+      params.require(:investment).permit( :id, :name, :growth_rate, :expense_rate, :initial_deposit, :user_id)
     end
 end

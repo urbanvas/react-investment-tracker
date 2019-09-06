@@ -17,7 +17,7 @@ export const createInvestment = (investmentInfo) => {
 		})
 	};
 	return (dispatch) => {
-		return fetch('http://localhost:3000//api/v1/investments', headers)
+		return fetch('http://localhost:3000/api/v1/investments', headers)
 			.then((res) => res.json())
 			.then((data) => {
 				console.log(data);
