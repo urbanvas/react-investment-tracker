@@ -17,18 +17,25 @@ class Api::V1::InvestmentsController < ApplicationController
     	render json: @investment
     end
 
+    def update
+     	@investment = Investment.find(params[:id])
+    	@investment.update(investment_params)
+    	@investment.save
+    	render json: @investment
+    end
+
     def destroy
 		@investment = Investment.find(params[:id])
     	@investment.destroy
-		render json: {success: "investment deleted"}
+		render json: { success: "Investment Deleted" }
     end
 
     private
     def set_user
-      @user = current_user
+    	@user = current_user
     end
 
     def investment_params
-      params.require(:investment).permit( :id, :name, :growth_rate, :expense_rate, :initial_deposit, :user_id)
+    	params.require(:investment).permit( :id, :name, :growth_rate, :expense_rate, :initial_deposit, :user_id)
     end
 end

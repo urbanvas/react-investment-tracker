@@ -27,3 +27,6 @@ MAKE SURE APP WORKS WITH NO SEED DATA
 APP WITH REDUX
 make new inestment and connect it to user
 FIGURE OUT A WAY FOR INCORRECT SIGN UP OR LOGIN TO STOP addhistory if failed
+
+UPDATE FORM CLASSES EVERYWHERE
+MOVE DELTE investment from investment component into its own?

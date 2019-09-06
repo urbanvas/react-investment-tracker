@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { deleteInvestment } from '../../actions/investment/deleteInvestment';
+import UpdateInvestmentForm from '../UpdateInvestmentForm/UpdateInvestmentForm';
 
 const Investment = ({ investment, deleteInvestment }) => {
+	const [ showUpdateInvestmentForm, setUpdateInvestmentForm ] = useState(false);
+
+	const showUpdate = (e) => {
+		showUpdateInvestmentForm ? setUpdateInvestmentForm(false) : setUpdateInvestmentForm(true);
+	};
+
 	const handleDelete = (e) => {
 		e.preventDefault();
 		deleteInvestment(investment.id);
@@ -13,7 +20,9 @@ const Investment = ({ investment, deleteInvestment }) => {
 			<span>{investment.growth_rate}</span>,
 			<span>{investment.expense_rate}</span>,
 			<span>{investment.initial_deposit}</span>
-			<button onClick={handleDelete}>Delete</button>
+			{showUpdateInvestmentForm && <UpdateInvestmentForm investment={investment} showUpdate={showUpdate} />}
+			<button onClick={handleDelete}>Delete Investment</button>
+			<button onClick={showUpdate}>Show Update Form</button>
 		</div>
 	);
 };

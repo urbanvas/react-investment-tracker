@@ -17,10 +17,9 @@ export default function investmentReducer(state = initialState, action) {
 		case CREATE_INVESTMENT:
 			return [ ...state, action.investment ];
 		case UPDATE_INVESTMENT:
-			return '';
+			return state.map((investment) => (investment.id === action.investment.id ? action.investment : investment));
 		case DELETE_INVESTMENT:
-			const newState = state.filter((investment) => investment.id !== action.id);
-			return newState;
+			return state.filter((investment) => investment.id !== action.id);
 		default:
 			return state;
 	}
