@@ -20,9 +20,9 @@ const Investment = ({ investment, deleteInvestment }) => {
 			<span>{investment.growth_rate}</span>,
 			<span>{investment.expense_rate}</span>,
 			<span>{investment.initial_deposit}</span>
-			{showUpdateInvestmentForm && <UpdateInvestmentForm investment={investment} showUpdate={showUpdate} />}
 			<button onClick={handleDelete}>Delete Investment</button>
 			<button onClick={showUpdate}>Show Update Form</button>
+			{showUpdateInvestmentForm && <UpdateInvestmentForm investment={investment} showUpdate={showUpdate} />}
 		</div>
 	);
 };

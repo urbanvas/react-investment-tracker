@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Investment from '../Investment/Investment';
 import InvestmentForm from '../InvestmentForm/InvestmentForm';
 import InvestmentContainer from '../InvestmentContainer/InvestmentContainer';
 
