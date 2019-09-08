@@ -1,7 +1,8 @@
 class Api::V1::InvestmentsController < ApplicationController
-    before_action :redirect?, :set_user
+	before_action :set_user
+	# before_action :redirect?, :set_user
 
-    def index
+	def index
         render json: @user.investments
     end
 
