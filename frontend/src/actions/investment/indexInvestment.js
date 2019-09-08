@@ -15,7 +15,7 @@ export const indexInvestments = () => {
 	};
 
 	return (dispatch) => {
-		return fetch('http://localhost:3000//api/v1/investments', headers)
+		return fetch('http://localhost:3000/api/v1/investments', headers)
 			.then((res) => res.json())
 			.then((data) => dispatch(indexInvestmentAction(data)))
 			.catch(console.log);
