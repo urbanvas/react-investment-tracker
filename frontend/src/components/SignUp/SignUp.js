@@ -10,9 +10,9 @@ const SignUp = ({ createUser, history }) => {
 	const [ email, setEmail ] = useState('');
 	const [ password, setPassword ] = useState('');
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-		createUser({ username, email, password });
+		await createUser({ username, email, password });
 		history.push('/home');
 	};
 	return (

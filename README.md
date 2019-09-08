@@ -38,3 +38,5 @@ have login user also fetch investments in the login action
 
 change investment to investment container cuz its gonna hold a lot of data in the future (graphs and tings)
 and invesemtcontainer to indexinvestmentcontainer?
+
+MAKE A RESET REDUX_STATE WHEN YOU LOGOUT

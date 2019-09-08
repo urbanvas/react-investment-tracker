@@ -9,9 +9,9 @@ const Login = ({ loginUser, history }) => {
 	const [ email, setEmail ] = useState('');
 	const [ password, setPassword ] = useState('');
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-		loginUser({ email, password });
+		await loginUser({ email, password });
 		history.push('/home');
 	};
 

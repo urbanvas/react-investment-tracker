@@ -1,16 +1,18 @@
-// import React, { useEffect, useState } from 'react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import Investment from '../Investment/Investment';
-// import { indexInvestments } from '../../actions/investment/indexInvestment';
+import { indexInvestments } from '../../actions/investment/indexInvestment';
 
-const InvestmentContainer = ({ user }) => {
+const InvestmentContainer = ({ indexInvestments, investments }) => {
+	useEffect(() => {
+		indexInvestments();
+	}, []);
+
 	let mappedInvestments = [];
-
 	const mappedInvestmentsfn = () => {
-		if (Object.keys(user).length > 0) {
+		if (investments.length > 0) {
 			mappedInvestments.push(
-				user.investments.map((val, idx) => {
+				investments.map((val, idx) => {
 					return <Investment key={idx} investment={val} />;
 				})
 			);
@@ -24,4 +26,4 @@ const InvestmentContainer = ({ user }) => {
 
 const mapStatetoProps = (state) => state;
 
-export default connect(mapStatetoProps, null)(InvestmentContainer);
+export default connect(mapStatetoProps, { indexInvestments })(InvestmentContainer);
