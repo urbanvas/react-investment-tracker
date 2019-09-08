@@ -9,7 +9,6 @@ const InvestmentForm = ({ createInvestment }) => {
 	const [ growth_rate, setGrowthRate ] = useState(0);
 	const [ expense_rate, setExpenseRate ] = useState(0);
 	const [ initial_deposit, setInitialDeposit ] = useState(0);
-	console.log(growth_rate, expense_rate);
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		createInvestment({ name, growth_rate, expense_rate, initial_deposit });

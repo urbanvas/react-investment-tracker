@@ -8,18 +8,15 @@ const InvestmentContainer = ({ indexInvestments, investments }) => {
 		indexInvestments();
 	}, []);
 
-	let mappedInvestments = [];
-	const mappedInvestmentsfn = () => {
-		if (investments.length > 0) {
-			mappedInvestments.push(
-				investments.map((val, idx) => {
-					return <Investment key={idx} investment={val} />;
-				})
-			);
-		}
-	};
+	const mappedInvestments = [];
 
-	mappedInvestmentsfn();
+	if (investments.length > 0) {
+		mappedInvestments.push(
+			investments.map((val, idx) => {
+				return <Investment key={idx} investment={val} />;
+			})
+		);
+	}
 
 	return <div>{mappedInvestments}</div>;
 };
