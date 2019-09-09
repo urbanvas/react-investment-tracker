@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Input from '../Input/Input';
-import Form from '../Form/Form';
+import Input from './Input';
+import Form from './Form';
 import { connect } from 'react-redux';
-import { loginUser } from '../../actions/user/loginUser';
+import { loginUser } from '../actions/user/loginUser';
 import { withRouter } from 'react-router-dom';
 
 const Login = ({ loginUser, history }) => {

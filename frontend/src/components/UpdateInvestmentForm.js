@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Input from '../Input/Input';
-import Form from '../Form/Form';
+import Input from './Input';
+import Form from './Form';
 import { connect } from 'react-redux';
-import { updateInvestment } from '../../actions/investment/updateInvestment';
+import { updateInvestment } from '../actions/investment/updateInvestment';
 
 const UpdateInvestmentForm = ({ investment, updateInvestment, showUpdate }) => {
 	const [ name, setName ] = useState(investment.name);

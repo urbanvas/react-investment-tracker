@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import Investment from '../Investment/Investment';
-import { indexInvestments } from '../../actions/investment/indexInvestment';
+import Investment from './Investment';
+import { indexInvestments } from '../actions/investment/indexInvestment';
 
 const InvestmentContainer = ({ indexInvestments, investments }) => {
 	useEffect(() => {

@@ -2,12 +2,12 @@ import React, { Fragment, Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import './App.scss';
-import Login from './Login/Login';
-import SignUp from './SignUp/SignUp';
-import Navbar from './Navbar/Navbar';
+import Login from './Login';
+import SignUp from './SignUp';
+import Navbar from './Navbar';
 import { currentUser } from '../actions/user/currentUser';
-import Logout from './Logout/Logout';
-import Home from './Home/Home';
+import Logout from './Logout';
+import Home from './Home';
 
 class App extends Component {
 	constructor(props) {

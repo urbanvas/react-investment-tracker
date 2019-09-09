@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { deleteInvestment } from '../../actions/investment/deleteInvestment';
-import UpdateInvestmentForm from '../UpdateInvestmentForm/UpdateInvestmentForm';
+import { deleteInvestment } from '../actions/investment/deleteInvestment';
+import UpdateInvestmentForm from './UpdateInvestmentForm';
 
 const Investment = ({ investment, deleteInvestment }) => {
 	const [ showUpdateInvestmentForm, setUpdateInvestmentForm ] = useState(false);

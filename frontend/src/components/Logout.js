@@ -1,5 +1,5 @@
 import React from 'react';
-import { logoutUser } from '../../actions/user/logoutuser';
+import { logoutUser } from '../actions/user/logoutuser';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 

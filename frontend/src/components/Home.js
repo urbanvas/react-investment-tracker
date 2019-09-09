@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import InvestmentForm from '../InvestmentForm/InvestmentForm';
-import InvestmentContainer from '../InvestmentContainer/InvestmentContainer';
+import InvestmentForm from './InvestmentForm';
+import InvestmentContainer from './InvestmentContainer';
 
 const Home = () => {
 	const [ showInvestmentForm, setInvestmentForm ] = useState(false);

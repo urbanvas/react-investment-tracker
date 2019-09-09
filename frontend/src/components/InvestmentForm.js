@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Input from '../Input/Input';
-import Form from '../Form/Form';
+import Input from './Input';
+import Form from './Form';
 import { connect } from 'react-redux';
-import { createInvestment } from '../../actions/investment/createInvestment';
+import { createInvestment } from '../actions/investment/createInvestment';
 
 const InvestmentForm = ({ createInvestment }) => {
 	const [ name, setName ] = useState('');
