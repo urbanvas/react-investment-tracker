@@ -14,14 +14,11 @@ class App extends Component {
 		super(props);
 		this.state = {};
 	}
-
-	// // async fetch w/ react?
 	componentDidMount() {
 		this.props.currentUser();
 	}
 
 	render() {
-		console.log(this.props);
 		return (
 			<Router>
 				<Fragment>
@@ -36,6 +33,7 @@ class App extends Component {
 		);
 	}
 }
+
 const mapStateToProps = (state) => state;
 
 export default connect(mapStateToProps, { currentUser })(App);

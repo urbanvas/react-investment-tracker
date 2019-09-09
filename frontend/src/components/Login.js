@@ -3,16 +3,14 @@ import Input from './Input';
 import Form from './Form';
 import { connect } from 'react-redux';
 import { loginUser } from '../actions/user/loginUser';
-import { withRouter } from 'react-router-dom';
 
-const Login = ({ loginUser, history }) => {
+const Login = ({ loginUser }) => {
 	const [ email, setEmail ] = useState('');
 	const [ password, setPassword ] = useState('');
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		await loginUser({ email, password });
-		history.push('/home');
 	};
 
 	return (
@@ -35,4 +33,4 @@ const Login = ({ loginUser, history }) => {
 	);
 };
 
-export default connect(null, { loginUser })(withRouter(Login));
+export default connect(null, { loginUser })(Login);

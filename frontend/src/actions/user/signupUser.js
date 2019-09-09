@@ -20,6 +20,7 @@ export const createUser = (userInfo) => {
 			.then((res) => res.json())
 			.then((data) => {
 				dispatch(signUpUser(data));
+				window.history.pushState(null, null, '/home');
 			})
 			.catch(console.log);
 	};

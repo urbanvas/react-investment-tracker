@@ -21,6 +21,7 @@ export const loginUser = (userInfo) => {
 			.then((data) => {
 				if (!data.status) {
 					dispatch(loginUserAction(data));
+					window.history.pushState(null, null, '/home');
 				}
 			})
 			.catch(console.log);

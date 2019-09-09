@@ -3,9 +3,8 @@ import Input from './Input';
 import Form from './Form';
 import { connect } from 'react-redux';
 import { createUser } from '../actions/user/signupUser';
-import { withRouter } from 'react-router-dom';
 
-const SignUp = ({ createUser, history }) => {
+const SignUp = ({ createUser }) => {
 	const [ username, setUsername ] = useState('');
 	const [ email, setEmail ] = useState('');
 	const [ password, setPassword ] = useState('');
@@ -13,7 +12,6 @@ const SignUp = ({ createUser, history }) => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		await createUser({ username, email, password });
-		history.push('/home');
 	};
 	return (
 		<Form classes="signup" buttonText="Sign Up" handleSubmit={handleSubmit}>
@@ -42,4 +40,4 @@ const SignUp = ({ createUser, history }) => {
 	);
 };
 
-export default connect(null, { createUser })(withRouter(SignUp));
+export default connect(null, { createUser })(SignUp);

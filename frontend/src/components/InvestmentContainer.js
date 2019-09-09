@@ -11,19 +11,13 @@ const InvestmentContainer = ({ indexInvestments, investments }) => {
 		[ indexInvestments ]
 	);
 
-	// why cant i put this in a use effect?
-	const mappedInvestments = [];
-
-	if (investments.length > 0) {
-		mappedInvestments.push(
-			investments.map((val, idx) => {
+	return (
+		<div>
+			{investments.map((val, idx) => {
 				return <Investment key={idx} investment={val} />;
-			})
-		);
-	}
-	//////
-
-	return <div>{mappedInvestments}</div>;
+			})}
+		</div>
+	);
 };
 
 const mapStatetoProps = (state) => state;
