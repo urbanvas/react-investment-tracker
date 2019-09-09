@@ -17,6 +17,7 @@ export const logoutUser = () => {
 			.then((res) => res.json())
 			.then((data) => {
 				dispatch(logoutUserAction(data));
+				window.history.pushState(null, null, '/');
 			})
 			.catch(console.log);
 	};
