@@ -4,7 +4,9 @@ const Form = ({ classes, buttonText, children, handleSubmit }) => {
 	return (
 		<form className={classes} onSubmit={(e) => handleSubmit(e)}>
 			{children}
-			<button type="submit">{buttonText}</button>
+			<button className="button is-warning" type="submit">
+				{buttonText}
+			</button>
 		</form>
 	);
 };

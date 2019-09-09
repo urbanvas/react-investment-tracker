@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import Investment from './Investment';
 import { indexInvestments } from '../actions/investment/indexInvestment';
 
 const InvestmentContainer = ({ indexInvestments, investments }) => {
-	useEffect(() => {
-		indexInvestments();
-	}, []);
+	useEffect(
+		() => {
+			indexInvestments();
+		},
+		[ indexInvestments ]
+	);
 
+	// why cant i put this in a use effect?
 	const mappedInvestments = [];
 
 	if (investments.length > 0) {
@@ -17,6 +21,7 @@ const InvestmentContainer = ({ indexInvestments, investments }) => {
 			})
 		);
 	}
+	//////
 
 	return <div>{mappedInvestments}</div>;
 };
