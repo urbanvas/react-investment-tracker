@@ -19,14 +19,14 @@ const Login = ({ loginUser }) => {
 				attr="email"
 				handleChange={setEmail}
 				value={email}
-				inputClassArr={[ 'input', 'is-danger', 'is-large' ]}
+				inputClassArr={[ 'input', 'is-rounded', 'is-primary' ]}
 				labelClassArr={[ 'label' ]}
 			/>
 			<Input
 				attr="password"
 				handleChange={setPassword}
 				value={password}
-				inputClassArr={[ 'input', 'is-danger', 'is-large' ]}
+				inputClassArr={[ 'input', 'is-rounded', 'is-primary' ]}
 				labelClassArr={[ 'label' ]}
 			/>
 		</Form>

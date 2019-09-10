@@ -1,14 +1,20 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Entry = () => {
 	return (
-		<article className="message is-danger container is-fullhd">
+		<article className="message is-primary container is-fullhd">
 			<div className="message-header">
-				<h3 className="is-size-4">Please look above and do one of the following:</h3>
+				<h3 className="is-size-4">Hello wise one, Welcome to your future.</h3>
 			</div>
 			<div className="message-body has-text-centered">
-				<p className="menu-label has-text-weight-bold">Sign Up</p>
-				<p className="menu-label has-text-weight-bold">Login</p>
+				<NavLink exact to="/signup" className="menu-label has-text-weight-bold">
+					SignUp
+				</NavLink>
+				<br />
+				<NavLink exact to="/login" className="menu-label has-text-weight-bold">
+					Login
+				</NavLink>
 			</div>
 		</article>
 	);

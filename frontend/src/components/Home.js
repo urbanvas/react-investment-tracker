@@ -10,12 +10,23 @@ const Home = ({ username }) => {
 	};
 
 	return (
-		<div>
-			<h3>Home Container</h3>
-			<p>Hello, {username}</p>
-			{showInvestmentForm && <InvestmentForm />}
-			<InvestmentContainer />
-			<button onClick={handleNewClick}>New Investment</button>
+		<div className="columns">
+			<div className="column container is-fluid">
+				<div className="message is-primary">
+					<p className="message-header">Hello, {username}</p>
+					<div className="message-body">
+						<p className="menu-label">Add new investments here:</p>
+						<button className="button is-primary" onClick={handleNewClick}>
+							New Investment Form
+						</button>
+					</div>
+				</div>
+			</div>
+			<div className="column is-8 container is-fluid">
+				{showInvestmentForm && <InvestmentForm />}
+				<InvestmentContainer />
+			</div>
+			<div className="column" />
 		</div>
 	);
 };
