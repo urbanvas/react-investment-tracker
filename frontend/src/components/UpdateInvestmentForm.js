@@ -23,28 +23,28 @@ const UpdateInvestmentForm = ({ investment, updateInvestment, showUpdate }) => {
 			}}
 		>
 			<Input
-				attr="name"
+				attr="Name"
 				handleChange={setName}
 				value={name}
 				inputClassArr={[ 'input', 'is-rounded', 'is-primary' ]}
 				labelClassArr={[ 'label' ]}
 			/>
 			<Input
-				attr="Growth Rate"
+				attr="Growth Rate (%)"
 				handleChange={setGrowthRate}
 				value={growth_rate}
 				inputClassArr={[ 'input', 'is-rounded', 'is-primary' ]}
 				labelClassArr={[ 'label' ]}
 			/>
 			<Input
-				attr="Expense Rate"
+				attr="Expense Rate (%)"
 				handleChange={setExpenseRate}
 				value={expense_rate}
 				inputClassArr={[ 'input', 'is-rounded', 'is-primary' ]}
 				labelClassArr={[ 'label' ]}
 			/>
 			<Input
-				attr="Initial Deposit"
+				attr="Initial Deposit ($)"
 				handleChange={setInitialDeposit}
 				value={initial_deposit}
 				inputClassArr={[ 'input', 'is-rounded', 'is-primary' ]}

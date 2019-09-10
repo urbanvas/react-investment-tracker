@@ -2,10 +2,11 @@ import React, { useState, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { deleteInvestment } from '../actions/investment/deleteInvestment';
 import UpdateInvestmentForm from './UpdateInvestmentForm';
+import Progress from './Progress';
 
 const Investment = ({ investment, deleteInvestment }) => {
 	const [ showUpdateInvestmentForm, setUpdateInvestmentForm ] = useState(false);
-	const { name, growth_rate, expense_rate, initial_deposit, id } = investment;
+	const { id } = investment;
 
 	const showUpdate = (e) => {
 		showUpdateInvestmentForm ? setUpdateInvestmentForm(false) : setUpdateInvestmentForm(true);
@@ -23,10 +24,7 @@ const Investment = ({ investment, deleteInvestment }) => {
 			<section className="hero is-primary is-bold">
 				<div className="hero-body">
 					<div className="container">
-						<h1 className="title">{name}</h1>
-						<h2 className="subtitle">{growth_rate}</h2>
-						<h2 className="subtitle">{expense_rate}</h2>
-						<h2 className="subtitle">{initial_deposit}</h2>
+						<Progress investment={investment} />
 						<button className="button is-warning" onClick={showUpdate}>
 							Show Update Form
 						</button>

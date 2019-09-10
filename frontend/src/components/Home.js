@@ -23,7 +23,7 @@ const Home = ({ username }) => {
 				</div>
 			</div>
 			<div className="column is-8 container is-fluid">
-				{showInvestmentForm && <InvestmentForm />}
+				{showInvestmentForm && <InvestmentForm handleClick={handleNewClick} />}
 				<InvestmentContainer />
 			</div>
 			<div className="column" />

@@ -4,7 +4,7 @@ import Form from './Form';
 import { connect } from 'react-redux';
 import { createInvestment } from '../actions/investment/createInvestment';
 
-const InvestmentForm = ({ createInvestment }) => {
+const InvestmentForm = ({ createInvestment, handleClick }) => {
 	const [ name, setName ] = useState('');
 	const [ growth_rate, setGrowthRate ] = useState(0);
 	const [ expense_rate, setExpenseRate ] = useState(0);
@@ -12,36 +12,37 @@ const InvestmentForm = ({ createInvestment }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		createInvestment({ name, growth_rate, expense_rate, initial_deposit });
+		handleClick();
 	};
 
 	return (
 		<Form classes="signup" buttonText="Create Investment" handleSubmit={handleSubmit}>
 			<Input
-				attr="name"
+				attr="Name"
 				handleChange={setName}
 				value={name}
-				inputClassArr={[ 'input', 'is-danger' ]}
+				inputClassArr={[ 'input', 'is-rounded', 'is-primary' ]}
 				labelClassArr={[ 'label' ]}
 			/>
 			<Input
-				attr="Growth Rate"
+				attr="Growth Rate (%)"
 				handleChange={setGrowthRate}
 				value={growth_rate}
-				inputClassArr={[ 'input', 'is-danger' ]}
+				inputClassArr={[ 'input', 'is-rounded', 'is-primary' ]}
 				labelClassArr={[ 'label' ]}
 			/>
 			<Input
-				attr="Expense Rate"
+				attr="Expense Rate (%)"
 				handleChange={setExpenseRate}
 				value={expense_rate}
-				inputClassArr={[ 'input', 'is-danger' ]}
+				inputClassArr={[ 'input', 'is-rounded', 'is-primary' ]}
 				labelClassArr={[ 'label' ]}
 			/>
 			<Input
-				attr="Initial Deposit"
+				attr="Initial Deposit ($)"
 				handleChange={setInitialDeposit}
 				value={initial_deposit}
-				inputClassArr={[ 'input', 'is-danger' ]}
+				inputClassArr={[ 'input', 'is-rounded', 'is-primary' ]}
 				labelClassArr={[ 'label' ]}
 			/>
 		</Form>
