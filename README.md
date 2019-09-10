@@ -15,7 +15,7 @@
 
 # Links
 
-[React Folder](https://github.com/urbanvas/budget/tree/master/frontend)
+[React Folder](https://github.com/urbanvas/budget/tree/master/frontend)  
 [LinkedIn](https://www.linkedin.com/in/neilvseejoor/)
 
 ## Contributing
