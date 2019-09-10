@@ -19,7 +19,7 @@
 	},
 	"scripts": {
 		"start": "react-scripts start",
-		"build": "cd frontend && react-scripts build",
+		"build": "cd frontend && npm install",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
 	},
