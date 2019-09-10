@@ -6,7 +6,6 @@ const Logout = ({ logoutUser, history }) => {
 	const handleClick = (e) => {
 		e.preventDefault();
 		logoutUser();
-		history.push('/');
 	};
 
 	return <button onClick={handleClick}>Logout</button>;
