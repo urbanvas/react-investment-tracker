@@ -18,10 +18,9 @@
 		"redux-thunk": "^2.3.0"
 	},
 	"scripts": {
-		"start": "react-scripts start",
-		"build": "cd frontend && npm install",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject"
+		"build": "cd frontend && npm install && npm run build && cd ..",
+		"deploy": "cp -a client/build/. public/",
+		"postinstall": "npm run build && npm run deploy && echo 'Client built!'"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
