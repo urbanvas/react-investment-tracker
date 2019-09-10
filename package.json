@@ -19,7 +19,7 @@
 	},
 	"scripts": {
 		"build": "cd frontend && npm install && npm run build && cd ..",
-		"deploy": "cp -a client/build/. public/",
+		"deploy": "cp -a frontend/build/. public/",
 		"postinstall": "npm run build && npm run deploy && echo 'Client built!'"
 	},
 	"eslintConfig": {
