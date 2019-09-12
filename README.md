@@ -20,7 +20,7 @@ Link to Article:
 
 # Links
 
-[React Folder](https://github.com/urbanvas/budget/tree/master/frontend)  
+[React Frontend](https://github.com/urbanvas/budget/tree/master/frontend)  
 [LinkedIn](https://www.linkedin.com/in/neilvseejoor/)
 
 ## Contributing
