@@ -3,6 +3,11 @@
 
 ![Homepage](lib/assets/index.png)
 
+## Blog
+
+Link to Article:
+[Medium](https://medium.com/@neilvseejoor/destructuring-with-objects-and-arrays-afb9540a5460)
+
 # Getting Started
 * Clone this repository
 * cd into the project folder
